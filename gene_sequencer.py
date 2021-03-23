@@ -1,3 +1,5 @@
+
+
 import os
 import sys
 import platform
@@ -10,10 +12,12 @@ def genome_splitter(genomes):
         if index == 0:
             pass
         else:
+            gene_and_tagplain = gene_and_tag
             gene_and_tag = gene_and_tag.split('|')
             a = gene_and_tag[2].replace('/', '_')
             with open("infl/" + str(a) + ".fasta", 'w') as wr:
-                wr.write(''.join(gene_and_tag[5].split('\n')[1:]))
+
+                wr.write('>'+''.join(gene_and_tagplain))
                 wr.flush()
                 wr.close()
     print("splitting is DONE!")
